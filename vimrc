@@ -94,6 +94,9 @@ nnoremap <c-l> <c-w>l
 " Close all other splits
 nnoremap <leader>o :only<cr>
 
+" Swap between files
+map <leader><leader> <c-^>
+
 " Multipurpose tab key: indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
   let col = col('.') - 1
