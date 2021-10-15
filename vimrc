@@ -11,6 +11,7 @@ Plug 'wincent/command-t', {
 " JS stuff
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'dense-analysis/ale'
 
 " End loading plugins
 call plug#end()
@@ -137,4 +138,27 @@ function! RenameCurrentFile()
   endif
 endfunction
 map <leader>n :call RenameCurrentFile()<cr>
+
+" Configure ALE
+let g:ale_fixers = {
+ \ 'javascript': ['eslint']
+ \ }
+
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_set_highlights = 0
+let g:ale_fix_on_save = 0
+
+" Toggle signcolumn. Works on vim>=8.1 or NeoVim
+function! ToggleSignColumn()
+  if !exists("b:signcolumn_on") || b:signcolumn_on
+    set signcolumn=no
+    let b:signcolumn_on=0
+  else
+    set signcolumn=number
+    let b:signcolumn_on=1
+  endif
+endfunction
+
+nnoremap <Leader>s :call ToggleSignColumn()<CR>
 
