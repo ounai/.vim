@@ -42,6 +42,7 @@ set diffopt=vertical "show diffs side-by-side
 set signcolumn=no
 set winwidth=79
 set wildmenu "make tab completion for files/buffers act like bash
+set signcolumn=number
 
 " Indent with spaces
 set expandtab
