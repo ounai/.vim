@@ -12,6 +12,7 @@ Plug 'wincent/command-t', {
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'dense-analysis/ale'
+Plug 'leafgarland/typescript-vim'
 
 " End loading plugins
 call plug#end()
@@ -56,11 +57,13 @@ set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
+" No command timeouts
+set notimeout
+set ttimeout
+
 " Ignore node_modules in Command-T
 set wildignore+=node_modules
-
-" Fix slow 0 inserts (?)
-:set timeout timeoutlen=1000 ttimeoutlen=100
+set wildignore+=old-frontend
 
 " Completion options: use a popup menu, show more info in menu (?)
 :set completeopt=menu,preview
@@ -150,7 +153,7 @@ let g:ale_sign_warning = '--'
 let g:ale_set_highlights = 0
 let g:ale_fix_on_save = 0
 
-" Toggle signcolumn. Works on vim>=8.1 or NeoVim
+" Toggle sign column
 function! ToggleSignColumn()
   if !exists("b:signcolumn_on") || b:signcolumn_on
     set signcolumn=no
@@ -163,3 +166,9 @@ endfunction
 
 nnoremap <Leader>s :call ToggleSignColumn()<CR>
 
+" Create new empty splits
+map <leader>ws :new<cr>
+map <leader>wv :vnew<cr>
+
+" Execute files with <leader>x
+map <leader>x :!clear && %:p<cr>
