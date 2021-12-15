@@ -164,7 +164,7 @@ function! ToggleSignColumn()
   endif
 endfunction
 
-nnoremap <Leader>s :call ToggleSignColumn()<CR>
+nnoremap <leader>s :call ToggleSignColumn()<CR>
 
 " Create new empty splits
 map <leader>ws :new<cr>
@@ -172,3 +172,23 @@ map <leader>wv :vnew<cr>
 
 " Execute files with <leader>x
 map <leader>x :!clear && %:p<cr>
+
+function SwapBool()
+  let s:w = expand("<cword>")
+
+  if s:w == "false"
+    normal ciwtrue
+
+    if expand("<cword>") != "true"
+      normal u
+    endif
+  elseif s:w == "true"
+    normal ciwfalse
+
+    if expand("<cword>") != "false"
+      normal u
+    endif
+  endif
+endfunction
+
+noremap <leader>b :call SwapBool()<CR>
