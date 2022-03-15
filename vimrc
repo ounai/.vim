@@ -13,6 +13,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'dense-analysis/ale'
 Plug 'leafgarland/typescript-vim'
+Plug 'rust-lang/rust.vim'
 
 " End loading plugins
 call plug#end()
@@ -44,6 +45,7 @@ set signcolumn=no
 set winwidth=79
 set wildmenu "make tab completion for files/buffers act like bash
 set signcolumn=number
+set encoding=utf-8
 
 " Indent with spaces
 set expandtab
@@ -61,9 +63,10 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set notimeout
 set ttimeout
 
-" Ignore node_modules in Command-T
+" Ignore stuff in Command-T
 set wildignore+=node_modules
 set wildignore+=old-frontend
+set wildignore+=bin
 
 " Completion options: use a popup menu, show more info in menu (?)
 :set completeopt=menu,preview
