@@ -64,9 +64,10 @@ set notimeout
 set ttimeout
 
 " Ignore stuff in Command-T
-set wildignore+=node_modules
-set wildignore+=old-frontend
-set wildignore+=bin
+set wildignore+=node_modules "js
+set wildignore+=old-frontend "lirp
+set wildignore+=bin "ts
+set wildignore+=target "rust
 
 " Completion options: use a popup menu, show more info in menu (?)
 :set completeopt=menu,preview
