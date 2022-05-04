@@ -8,7 +8,7 @@ Plug 'wincent/command-t', {
   \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
   \ }
 
-" JS stuff
+" Language plugins
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'dense-analysis/ale'
@@ -196,4 +196,5 @@ function SwapBool()
   endif
 endfunction
 
+" Change boolean values with <leader>b
 noremap <leader>b :call SwapBool()<CR>
