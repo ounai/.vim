@@ -1,7 +1,7 @@
 " vim:set ts=2 sts=2 sw=2 expandtab:
 
 " Begin loading plugins
-call plug#begin('~/.vim/plugmcplugface')
+call plug#begin('~/.vim/plug-plugins')
 
 " Command-T
 Plug 'wincent/command-t', {
