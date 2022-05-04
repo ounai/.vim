@@ -66,6 +66,7 @@ set ttimeout
 " Ignore stuff in Command-T
 set wildignore+=node_modules "js
 set wildignore+=old-frontend "lirp
+set wildignore+=dist "ts
 set wildignore+=bin "ts
 set wildignore+=target "rust
 
