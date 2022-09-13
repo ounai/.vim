@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/plug-plugins')
 
 " Command-T
+let g:CommandTPreferredImplementation='ruby'
 Plug 'wincent/command-t', {
   \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
   \ }
